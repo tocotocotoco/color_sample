@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<title>雑記とことこ - PCCS色立体</title>
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+
+<script language="JavaScript" type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/jquery.reel.js"></script>
+<script language="JavaScript" type="text/javascript" src='js/jquery.disable.text.select.js'></script>
+<script language="JavaScript" type="text/javascript" src='js/jquery.mousewheel.js'></script>
+</head>
+<body>
+<header class="global-header">
+<h1 class="page-heading">PCCS色立体</h1>
+<nav class="nav-page">
+ <p class="nav-page-left">
+
+ </p>
+</header>
+
+<section class="block">
+<img id='image' src='samples/pccs.jpg' width='240' height='240' />
+<script type='text/javascript'>
+$('#image').reel({
+    frames:      20,
+    frame:       14,
+    rows:        6,
+    row:         3,
+    speed:       0.3,
+    path:        'samples/pccs/',
+    images:
+
+      ( function(){
+          var start= 1, every= 1, frames= 120,
+              ext= 'jpg', length= 7, fill= '0',
+              array= []
+          for( var i= start; i <= frames; i+= every ){
+              var name= [ i, ext ].join('.')
+              while( name.length < length ) name= fill+name
+              array.push( name )
+          }
+          return array
+      } )()
+});
+
+</script>
+
+
+<h1 class="block-heading">PCCS色立体</h1>
+<p class="comment">
+ドラッグ回転 [　　←360→ ＆ ↑180↓　   ]
+</p>
+</section>
+
+
+<footer class="global-footer">
+
+ <p class="copyright"><small>Copyright&copy;2009 tocotoco All rights reserved.</small></p>
+</footer>
+
+</body>
+</html>
